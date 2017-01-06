@@ -1,0 +1,6 @@
+#Return the probability of exactly one head in three flips
+
+def f(p):
+    t = 1-p;
+    return p*t*t + t*p*t + t*t*p;
+print (f(0.5))
