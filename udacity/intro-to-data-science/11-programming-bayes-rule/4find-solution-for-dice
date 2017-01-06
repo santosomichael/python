@@ -1,0 +1,13 @@
+#Given that the probability of one head is p, return the probability of
+#two flips resulting in two heads
+
+def f(p):
+    inverse = 1-p
+    # print("All probability -")
+    # print("H T: " + str(inverse*p))
+    # print("H T: " + str(inverse*p))
+    # print("T T: " + str(inverse*inverse))
+    # print("H H : " + str(p*p))
+    return p*p
+
+print (f(0.5))
