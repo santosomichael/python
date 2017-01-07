@@ -1,0 +1,23 @@
+#Return the probability of getting head with 2 coins, flipped 1 timesselected and 
+#Two coin has a different, and the dependant have different 
+#P(C1) = p0  		chance coin 1 is selected is p0
+#P(C2) = 1-p0
+#P(H|C1) = p1	chance of getting head if coin 1 is selected is p1
+#P(H|C2) = p2		chance of getting head if coin 2 is selected is p2
+
+import math
+
+def f(p0,p1,p2):
+	p01 = 1-p0
+	print("Chance coin 1 is picked " + str(p0))
+	print("Chance coin 2 is picked " + str(p01))	
+
+#print(round(p01*(1-p2),2)) round for fraction number
+
+	print("Chance of getting head, tail if coin 1 is picked : " + str(p0*p1) + "," + str(p0*(1-p1)))
+	print("Chance of getting head, tail if coin 2 is picked : " + str(p01*p2) + "," + str(p01*(1-p2)))
+	print("Chance of getting head : " + str(p0*p1 + p01*p2))
+	print("Chance of getting tail : " + str(p0*(1-p1) + p01*(1-p2)))
+	return "END"
+
+print(f(0.3,0.5,0.9))
