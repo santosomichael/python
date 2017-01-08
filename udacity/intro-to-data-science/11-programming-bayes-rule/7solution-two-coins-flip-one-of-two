@@ -20,4 +20,4 @@ def f(p0,p1,p2):
 	print("Chance of getting tail : " + str(p0*(1-p1) + p01*(1-p2)))
 	return "END"
 
-print(f(0.3,0.5,0.9))
+print(f(0.1,0.5,0.2))
