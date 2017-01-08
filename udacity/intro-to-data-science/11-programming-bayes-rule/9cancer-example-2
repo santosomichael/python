@@ -1,0 +1,41 @@
+#Return the probability of A conditioned on B given that 
+#P(A)=p0, P(B|A)=p1, and P(Not B|Not A)=p2 
+
+import math
+
+def f(p0,p1,p2):
+	p01 = 1-p0
+	print("Chance have cancer " + str(p0))
+	print("Chance no cancer " + str(p01))
+	cancerPositive = round(p0*p1, 2)
+	cancerNegative = round(p0*(1-p1),2)
+
+	noCancerPositive = round(p01*(1-p2), 2)
+	noCancerNegative = round(p01*p2, 2)
+
+	positive = cancerPositive + noCancerPositive
+
+	negative = cancerNegative + noCancerNegative
+
+	print("Chance of getting cancer and have positive, negative : " + str(cancerPositive) + "," + str(cancerNegative))
+	print("Chance of no cancer and have positive, negative : " + str(noCancerPositive) + "," + str(noCancerNegative))
+	print("Chance of getting positive : " + str(positive))
+	print("Chance of getting negative : " + str(negative))
+#conditioned probability positive
+	total = cancerPositive + noCancerPositive
+	cancer = cancerPositive/total
+	noCancer = noCancerPositive/total
+#print
+	print("Chance of getting positive and have cancer, : " + str(cancer))
+	print("Chance of getting positive and dont have cancer, : " + str(noCancer))
+
+#conditioned probability negative
+	total = cancerNegative + noCancerNegative
+	cancer = cancerNegative/total
+	noCancer = noCancerNegative/total
+#print
+	print("Chance of getting positive and have cancer, : " + str(cancer))
+	print("Chance of getting positive and dont have cancer, : " + str(noCancer))
+	return "END"
+
+print(f(0.1,0.9,0.8))
